@@ -7,7 +7,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
-
+import ShopVista from  "../assets/logo.png"
 const ProductsInDetail = ({ BackendURL }) => {
   const [Products, setProducts] = useState();
   const { ProductId } = useParams();
@@ -22,7 +22,7 @@ const ProductsInDetail = ({ BackendURL }) => {
   const [currentImage, setCurrentImage] = useState(
     Products && Products.ImageURL && Products.ImageURL.length > 0
       ? Products.ImageURL[0]
-      : "https://m.media-amazon.com/images/I/61eXvcm9zrL._SX522_.jpg"
+      : ShopVista
   );
   const handleImages = (e) => {
     setCurrentImage(e.target.src);
@@ -188,12 +188,12 @@ const ProductsInDetail = ({ BackendURL }) => {
           </div>
           <Heading style={{ textAlign: "center" }}>Feedbacks by users</Heading>
 
-          {Products && Products.Comments.length > 0 ? (
+          {Products && Products.Comments.length > 1 ? (
             Products.Comments.map((i) => (
               <>
                 <CommentContainer>
                   <CommentUserDetail>
-                    <CommentAvatar src="https://m.media-amazon.com/images/I/61eXvcm9zrL._SX522_.jpg" />
+                    <CommentAvatar src={ShopVista} />
                     <CommenterName>{i.Commenter}</CommenterName>
                   </CommentUserDetail>
                   <Comment>{i.Comment}</Comment>

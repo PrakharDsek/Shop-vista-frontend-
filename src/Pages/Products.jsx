@@ -63,8 +63,8 @@ const Products = ({BackendURL}) => {
                 <>
                   <ProductShowcaser
                     ImgUrl={
-                      i.Image
-                        ? i.Image
+                      i.ImageURL
+                        ? i.ImageURL
                         : "https://m.media-amazon.com/images/I/31wacBawB3L._AC_SY200_.jpg"
                     }
                     Name={i.Name}
@@ -137,8 +137,8 @@ const Products = ({BackendURL}) => {
                 <>
                   <ProductShowcaser
                     ImgUrl={
-                      i.Image
-                        ? i.Image
+                      i.ImageURL
+                        ? i.ImageURL
                         : "https://m.media-amazon.com/images/I/31wacBawB3L._AC_SY200_.jpg"
                     }
                     Name={i.Name}
@@ -211,8 +211,8 @@ const Products = ({BackendURL}) => {
                 <>
                   <ProductShowcaser
                     ImgUrl={
-                      i.Image
-                        ? i.Image
+                      i.ImageURL
+                        ? i.ImageURL
                         : "https://m.media-amazon.com/images/I/31wacBawB3L._AC_SY200_.jpg"
                     }
                     Name={i.Name}

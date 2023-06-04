@@ -142,8 +142,8 @@ const HomePage = ({ BackendURL }) => {
                 <ProductShowcaser
                   ProductId={i._id}
                   ImgUrl={
-                    i.Image
-                      ? i.Image
+                    i.ImageURL
+                      ? i.ImageURL
                       : "https://m.media-amazon.com/images/I/31wacBawB3L._AC_SY200_.jpg"
                   }
                   Name={i.Name}
@@ -214,12 +214,12 @@ const HomePage = ({ BackendURL }) => {
                 <ProductShowcaser
                   ProductId={i._id}
                   ImgUrl={
-                    i.Image
-                      ? i.Image
+                    i.ImageURL
+                      ? i.ImageURL
                       : "https://m.media-amazon.com/images/I/31wacBawB3L._AC_SY200_.jpg"
                   }
                   Name={i.Name}
-                  Type={"Kitchen"}
+                  Type={"Top "}
                   Price={i.Price}
                 />
               </>
@@ -286,12 +286,12 @@ const HomePage = ({ BackendURL }) => {
                 <ProductShowcaser
                   ProductId={i._id}
                   ImgUrl={
-                    i.Image
-                      ? i.Image
+                    i.ImageURL
+                      ? i.ImageURL
                       : "https://m.media-amazon.com/images/I/31wacBawB3L._AC_SY200_.jpg"
                   }
                   Name={i.Name}
-                  Type={"Kitchen"}
+                  Type={"electronics"}
                   Price={i.Price}
                 />
               </>
@@ -358,8 +358,8 @@ const HomePage = ({ BackendURL }) => {
                 <ProductShowcaser
                   ProductId={i._id}
                   ImgUrl={
-                    i.Image
-                      ? i.Image
+                    i.ImageURL
+                      ? i.ImageURL
                       : "https://m.media-amazon.com/images/I/31wacBawB3L._AC_SY200_.jpg"
                   }
                   Name={i.Name}

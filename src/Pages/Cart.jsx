@@ -23,7 +23,6 @@ const Cart = ({ BackendURL }) => {
       const cartResponse = await axios.get(
         `${BackendURL}/cart/myCart?userId=${UserAuthData.data._id}`
       );
-
       const cartData = cartResponse.data.data[0]; // Assuming there is only one cart in the response
 
       const CartProductPromises = cartData.CartProductIds.map((productId) =>

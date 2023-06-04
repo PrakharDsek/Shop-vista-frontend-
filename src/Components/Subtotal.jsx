@@ -1,46 +1,46 @@
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Subtotal = ({ cartProduct, Discount,quantity }) => {
-  
-const calculateSubtotal = () => {
-  let subtotal = 0;
-  let totalDiscount = 0;
+const Subtotal = ({ cartProduct, quantity }) => {
+  const calculateSubtotal = () => {
+    let subtotal = 0;
+    let totalDiscount = 0;
 
-  if (cartProduct && cartProduct.length > 0) {
-    cartProduct.forEach((product) => {
-      const productPrice = parseFloat(product ? product.Price : 5);
-      const productQuantity = quantity[product ? product._id :""];
+    if (cartProduct && cartProduct.length > 0) {
+      cartProduct.forEach((product) => {
+        const productPrice = parseFloat(product.Price);
+        console.log(parseFloat(product.Price))
+        const productQuantity = quantity[product._id] || 0;
 
-      if (productPrice >= 0) {
-        subtotal += productPrice * productQuantity;
-        totalDiscount += product ? product.Discount : 0.2 * productPrice;
-      }
-    });
-  }
+        if (productPrice >= 0) {
+          subtotal += productPrice * productQuantity;
+          console.log(subtotal)
+          totalDiscount += (product.Discount || 0.2) * productPrice;
+        }
+      });
+    }
 
-  subtotal = Math.max(subtotal, 0);
-  totalDiscount = Math.max(totalDiscount, 0);
+    subtotal = Math.max(subtotal, 0);
+    totalDiscount = Math.max(totalDiscount, 0);
 
-  const discount = subtotal !== 0 ? totalDiscount / subtotal : 0;
-  let grandTotal = subtotal - discount;  
+    const discount = subtotal !== 0 ? totalDiscount / subtotal : 0;
+    let grandTotal = subtotal - discount;
 
-  if (grandTotal < 0) {
-    grandTotal = 5;
-  }
+    if (grandTotal < 0) {
+      grandTotal = 5;
+    }
 
-  return {
-    subtotal,
-    discount,
-    grandTotal,
+    return {
+      subtotal,
+      discount,
+      grandTotal,
+    };
   };
-};
-
 
   useEffect(() => {
-    calculateSubtotal()
-  },[quantity])
+    calculateSubtotal();
+  }, [quantity]);
 
   const { subtotal, discount, grandTotal } = calculateSubtotal();
 
@@ -63,17 +63,23 @@ const calculateSubtotal = () => {
         <ButtonBuy>
           {Math.abs(grandTotal.toFixed(2) - 0) < 0.001 ? (
             <span
-              style={{ color: "initial", textDecoration: "none", opacity: 0.5 }}
+              style={{
+                color: "initial",
+                textDecoration: "none",
+                opacity: 0.5,
+              }}
             >
               {/* Render a disabled version of the link */}
-            Checkout
+              Checkout
             </span>
           ) : (
             <Link
               style={{ color: "initial", textDecoration: "none" }}
               to={`/checkout?total=${grandTotal.toFixed(
                 2
-              )}&quantity=${encodeURIComponent(JSON.stringify(cartProduct.map((i) => { return i? i._id:""; })))}`}
+              )}&quantity=${encodeURIComponent(
+                JSON.stringify(cartProduct.map((i) => (i ? i._id : "")))
+              )}`}
             >
               {/* Render the enabled link */}
               Checkout
@@ -84,7 +90,6 @@ const calculateSubtotal = () => {
     </Container>
   );
 };
-
 export default Subtotal;
 const Container = styled.div`
   width: 100%;

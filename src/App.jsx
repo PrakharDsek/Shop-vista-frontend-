@@ -32,7 +32,7 @@ import UpdateProductPageInDetail from "./Pages/UpdateProductPageInDetail";
 
 function App() {
   const [IsAuth, setAuth] = useState(false);
-  const BackendURL = "https://shop-vista.onrender.com/api/v1";
+  const BackendURL = "http://localhost:3000/api/v1";
   const dispatch = useDispatch();
   const navigateTo = useNavigate();
   const location = useLocation();
@@ -71,10 +71,7 @@ function App() {
               <>
                 <Header />
                 <Home BackendURL={BackendURL} />
-                <Toaster
-  position="bottom-right"
-  reverseOrder={false}
-/>
+                <Toaster position="bottom-right" reverseOrder={false} />
                 <Footer />
               </>
             }
@@ -86,10 +83,7 @@ function App() {
               <>
                 <Header />
                 <Home BackendURL={BackendURL} />
-                <Toaster
-  position="bottom-right"
-  reverseOrder={false}
-/>
+                <Toaster position="bottom-right" reverseOrder={false} />
                 <Footer />
               </>
             }
@@ -104,10 +98,7 @@ function App() {
                   <>
                     <Header />
                     <Cart BackendURL={BackendURL} />
-                    <Toaster
-  position="bottom-right"
-  reverseOrder={false}
-/>
+                    <Toaster position="bottom-right" reverseOrder={false} />
                     <Footer />
                   </>
                 )}
@@ -120,15 +111,9 @@ function App() {
               <>
                 <Header />
                 <ProductsInDetail BackendURL={BackendURL} />
-                <Toaster
-  position="bottom-right"
-  reverseOrder={false}
-/>
+                <Toaster position="bottom-right" reverseOrder={false} />
 
-<Toaster
-  position="bottom-right"
-  reverseOrder={false}
-/>
+                <Toaster position="bottom-right" reverseOrder={false} />
                 <Footer />
               </>
             }
@@ -139,15 +124,9 @@ function App() {
               <>
                 <Header />
                 <UpdateProductPageInDetail BackendURL={BackendURL} />
-                <Toaster
-  position="bottom-right"
-  reverseOrder={false}
-/>
+                <Toaster position="bottom-right" reverseOrder={false} />
 
-<Toaster
-  position="bottom-right"
-  reverseOrder={false}
-/>
+                <Toaster position="bottom-right" reverseOrder={false} />
                 <Footer />
               </>
             }
@@ -158,10 +137,7 @@ function App() {
               <>
                 <Header />
                 <Products BackendURL={BackendURL} />
-                <Toaster
-  position="bottom-right"
-  reverseOrder={false}
-/>
+                <Toaster position="bottom-right" reverseOrder={false} />
                 <Footer />
               </>
             }
@@ -176,10 +152,7 @@ function App() {
                   <>
                     <Header />
                     <Payments BackendURL={BackendURL} />
-                    <Toaster
-  position="bottom-right"
-  reverseOrder={false}
-/>
+                    <Toaster position="bottom-right" reverseOrder={false} />
                     <Footer />
                   </>
                 )}
@@ -196,10 +169,7 @@ function App() {
                   <>
                     <Header />
                     <Account BackendURL={BackendURL} />
-                    <Toaster
-  position="bottom-right"
-  reverseOrder={false}
-/>
+                    <Toaster position="bottom-right" reverseOrder={false} />
                     <Footer />
                   </>
                 )}
@@ -216,10 +186,7 @@ function App() {
                   <>
                     <Header />
                     <SellerForm BackendURL={BackendURL} />
-                    <Toaster
-  position="bottom-right"
-  reverseOrder={false}
-/>
+                    <Toaster position="bottom-right" reverseOrder={false} />
                     <Footer />
                   </>
                 )}
@@ -232,10 +199,7 @@ function App() {
               <>
                 <Header />
                 <SearchPage BackendURL={BackendURL} />
-                <Toaster
-  position="bottom-right"
-  reverseOrder={false}
-/>
+                <Toaster position="bottom-right" reverseOrder={false} />
                 <Footer />
               </>
             }
@@ -246,10 +210,7 @@ function App() {
               <>
                 <Header />
                 <CategoryPage BackendURL={BackendURL} />
-                <Toaster
-  position="bottom-right"
-  reverseOrder={false}
-/>
+                <Toaster position="bottom-right" reverseOrder={false} />
                 <Footer />
               </>
             }
@@ -264,10 +225,7 @@ function App() {
                   <>
                     <Header />
                     <Orders BackendURL={BackendURL} />
-                    <Toaster
-  position="bottom-right"
-  reverseOrder={false}
-/>
+                    <Toaster position="bottom-right" reverseOrder={false} />
                     <Footer />
                   </>
                 )}
@@ -284,10 +242,7 @@ function App() {
                   <>
                     <Header />
                     <Subscription BackendURL={BackendURL} />
-                    <Toaster
-  position="bottom-right"
-  reverseOrder={false}
-/>
+                    <Toaster position="bottom-right" reverseOrder={false} />
                     <Footer />
                   </>
                 )}
@@ -304,10 +259,7 @@ function App() {
                   <>
                     <Header />
                     <Checkout BackendURL={BackendURL} />
-                    <Toaster
-  position="bottom-right"
-  reverseOrder={false}
-/>
+                    <Toaster position="bottom-right" reverseOrder={false} />
                     <Footer />
                   </>
                 )}
@@ -324,10 +276,7 @@ function App() {
                   <>
                     <Header />
                     <SellerDashboard BackendURL={BackendURL} />
-                    <Toaster
-  position="bottom-right"
-  reverseOrder={false}
-/>
+                    <Toaster position="bottom-right" reverseOrder={false} />
                     <Footer />
                   </>
                 )}

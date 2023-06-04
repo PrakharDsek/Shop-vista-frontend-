@@ -209,6 +209,7 @@ const AddProducts = ({ BackendURL, userId, name }) => {
               onSelect={i.onselect}
               placeholder={i.placeholder}
               name={i.name}
+              multiple={true}
               required
             />
           </>

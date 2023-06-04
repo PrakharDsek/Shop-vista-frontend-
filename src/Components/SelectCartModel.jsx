@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Delete } from "@mui/icons-material";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SelectCartModel = ({
   imageURL,
@@ -33,12 +34,17 @@ const SelectCartModel = ({
 
     onQuantityChange(productId, cartProductQuantity); // Call onQuantityChange prop with updated quantity
   };
+  const NavigateTo= useNavigate()
   return (
     <Container className="CartModel">
       <Content>
         <Delete onClick={() => RemoveFromCart(productId)} />
         <ContentLeft>
-          <ProductImage src={imageURL} />
+          <ProductImage
+            style={{ cursor: "pointer" }}
+            onClick={() => NavigateTo(`/product/${productId}`)}
+            src={imageURL}
+          />
           <ProductDisc>
             <Heading>{productName}</Heading>
             <LightPara>{productOffer}</LightPara>
@@ -53,7 +59,7 @@ const SelectCartModel = ({
               -
             </button>
             <Heading>
-              {cartProductQuantity - 1 == 0 ? "1" : cartProductQuantity - 1}
+              {cartProductQuantity - 1 == 0 ? "0" : cartProductQuantity - 1}
             </Heading>
             <button
               style={{ color: "white", backgroundColor: "var(--header_bg)" }}
