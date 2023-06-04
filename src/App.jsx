@@ -32,7 +32,7 @@ import UpdateProductPageInDetail from "./Pages/UpdateProductPageInDetail";
 
 function App() {
   const [IsAuth, setAuth] = useState(false);
-  const BackendURL = "http://localhost:3000/api/v1";
+  const BackendURL = "https://shop-vista.onrender.com/api/v1";
   const dispatch = useDispatch();
   const navigateTo = useNavigate();
   const location = useLocation();
